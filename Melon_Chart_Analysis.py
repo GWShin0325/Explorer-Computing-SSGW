@@ -14,9 +14,7 @@ try:
     font_name = font_manager.FontProperties(fname=font_path).get_name()
     rc('font', family=font_name)
 except Exception as e:
-    st.error(f"폰트 설정 오류: {e}. Streamlit이 실행되는 환경에 폰트가 설치되어 있는지 확인해주세요.")
-    st.info("Mac OS의 경우 '/System/Library/Fonts/Supplemental/AppleGothic.ttf' 등을 사용해 보세요.")
-
+    rc('font', family='sans-serif')
 
 st.title("멜론 차트 TOP 100 가수 트렌드 분석")
 search = st.button("차트 분석 시작")
